@@ -1,0 +1,32 @@
+{% extends "atm_py/base.html" %}
+{% block content %}
+<table>
+  <tr>
+    <td><h2>
+      Hello Mr/Ms. &nbsp; {{request.user}}
+    </h2></td>
+  </tr>
+  <tr>
+    <td>
+      <h1>
+        Welcome to <b><i>Balance Inquiry Section</i></b>
+      </h1>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3>Your Current Account Balance is</h3>
+      <h1><i>Rs. {{ current_balance }}</i></h1>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <center>
+        <a href={% url 'welcome-atm' %}><button>Back</button></a>
+
+      </center>
+    </td>
+  </tr>
+</table>
+
+{% endblock content %}

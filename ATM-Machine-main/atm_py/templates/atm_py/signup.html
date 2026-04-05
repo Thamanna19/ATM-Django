@@ -1,0 +1,53 @@
+{% extends "atm_py/base.html" %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <center>
+    <table class="signup_table">
+        <tr><td colspan="2"><center><h2>Signup Form </h2></center></td></tr>
+        <tr>
+            <td>{{form.first_name.label}}</td>
+            <td>{{form.first_name}}</td>
+        </tr>
+        <tr>
+            <td>{{form.last_name.label}}</td>
+            <td>{{form.last_name}}</td>
+        </tr>
+        <tr>
+            <td>{{form.username.label}}</td>
+            <td>{{form.username}}</td>
+        </tr>
+        <tr>
+            <td>{{form.email.label}}</td>
+            <td>{{form.email}}</td>
+        </tr>
+        <tr>
+            <td>{{form.password1.label}}</td>
+            <td>{{form.password1}}</td>
+        </tr>
+        <tr>
+            <td>{{form.password2.label}}</td>
+            <td>{{form.password2}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{form.errors}}&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2"><center><a href={% url 'welcome-atm' %}><input type="button" value="Back"></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="Sign Account"></center></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" id="forgot_pwd_txt">
+                <center>
+                    <p>Already Have an Account? <a href={% url 'login-atm' %}>Signin</a></p>
+                </center>
+            </td>
+        </tr>
+    </table>
+</center>
+</form>
+{% endblock content %}

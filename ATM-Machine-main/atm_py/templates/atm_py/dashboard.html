@@ -1,0 +1,59 @@
+{% extends "atm_py/base.html" %}
+{% block content %}
+  <table id="table_dashboard">
+    <tr>
+      <td colspan="3"><center><h1>Dashboard</h1></center></td>
+    </tr>
+    <tr>
+      <td colspan="3"><h2>Hello Mr/Ms. &nbsp; {{request.user}}</h2></td>
+      
+    </tr>
+    <tr>
+      <td colspan="3"><h3>What would you like to do?</h3></td>
+    </tr>
+    <tr>
+      <td>
+        <a href={% url 'balance_inquiry_atm' %}>
+          <button class="dash_btn" id="btn_balance_inquiry">Balance Inquiry</button>
+        </a>
+      </td>
+      <td>
+        <a href={% url 'withdraw_money_atm' %}>
+          <button class="dash_btn" id="btn_withdraw_money">Withdraw Money</button>
+        </a>
+      </td>
+      <td>
+        <a href={% url 'add_balance_atm' %}>
+          <button class="dash_btn" id="btn_add_balance">Add Balance</button>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href={% url 'reset_password' %}>
+          <button class="dash_btn" id="btn_chng_pwd" disabled style="background-color: darkgray;">Change Password</button>
+        </a>
+      </td>
+      <!-- <td><button class="dash_btn" id="btn_chng_pin">Change Pin</button></td> -->
+      <td>
+        <a href={% url 'tranc_history_atm' %}>
+          <button class="dash_btn" id="btn_trn_history">Tranc. History</button>
+        </a>
+      </td>
+      <td colspan="3">
+        <center>
+          <a href={% url 'logout-user' %}>
+            <button class="dash_btn" id="btn_signout" >
+              Signout
+            </button>
+          </a>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" id="forgot_pwd_txt">
+        <center><h2>{{message}}</h2></center>
+      </td>
+    </tr>
+  </table>
+{% endblock content %}

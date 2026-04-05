@@ -1,0 +1,47 @@
+{% extends "atm_py/base.html" %}
+{% block content %}
+
+  <table>
+    <tr>
+      <td><h2>
+        Hello Mr/Ms. &nbsp; {{request.user}}
+      </h2></td>
+    </tr>
+    <tr>
+      <td>
+        <h1>
+          Welcome to <b><i>Money Addition System</i></b>
+        </h1>
+      </td>
+    </tr>
+    <tr>
+      <td><h3>How much money would like to Add?</h3></td>
+      <td>
+        <form action="" method="POST">
+          {% csrf_token %}
+        {{form.amount}}
+      </td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td colspan="2"  id="forgot_pwd_txt"><center>
+        <h2>{{status}}</h2>
+      </center>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td colspan="2">
+        <center>
+          <input type="submit" value="Add Money"> 
+        </form>
+        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        <a href={% url 'dashboard-atm' %}><button>Back</button></a>
+        </center>
+      </td>
+    </tr>
+  </table>
+
+
+{% endblock content %}
